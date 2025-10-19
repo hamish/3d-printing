@@ -13,8 +13,8 @@ show_cross_section = true; // Show cross-section view (default: false)
 
 // Main pen holder object
 difference() {
-    // Outer cylinder with rounded edges using BOSL2
-    cyl(h = height, r = radius, rounding = rounding, $fn = 100);
+    // Outer cylinder with different rounding on top and bottom
+    cyl(h = height, r = radius, rounding1 = rounding, rounding2 = wall_thickness/2, $fn = 100);
 
     // Inner cylinder to cut out (creating the cup shape) with rounded bottom edge
     translate([0, 0, wall_thickness]) {
